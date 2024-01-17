@@ -55,16 +55,11 @@ $result = $conn->query($sql);
                     <div class="col-2">
                         <form action="remover.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $row["id"]?>">
-                            <button class="btn btn-danger" onclick="return confirm('Deseja realmente remover?');">Remover</button>
+                            <button class="btn btn-danger " onclick="return confirm('Deseja realmente remover?');">Remover</button>
                         </form>
                     </div>
                 </div>
-                    
-                    
-        
-
-        
-
+                  
                 </td>
             </tr>
 <?php
