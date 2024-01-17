@@ -19,6 +19,9 @@ header {
     text-align: left;
     background-color: #333;
     text-decoration:none;
+    z-index:500; 
+    width: 100%;
+    position: absolute;
 }
 
 .menu ul {
@@ -27,6 +30,7 @@ header {
     padding: 0;
     margin-left: 200px;
     text-decoration:none;
+    z-index:999999;
 }
 
 .menu li {
@@ -35,6 +39,7 @@ header {
     margin-top: 30px;
     margin-bottom: 30px;
     text-decoration:none;
+    z-index:999999;
 }
 
 
@@ -42,4 +47,5 @@ header {
     margin-top: 60px; /* Ajuste para compensar a altura do menu fixo */
     padding: 20px;
     text-decoration:none;
+    z-index:999999;
 }

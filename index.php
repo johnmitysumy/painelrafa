@@ -16,8 +16,8 @@
     </head>
    
 <?php include 'menu.php'; ?>
-
-<div class="reveal" style="margin-top: -100px;">                 
+<br><br>
+<div class="reveal" style="margin-top: -150px;">                 
 <?php
 // Arquivo de conexão com o banco de dados (use o código anterior)
 include 'banco.php';
