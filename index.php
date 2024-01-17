@@ -9,16 +9,14 @@
         <link rel="stylesheet" href="dist/reset.css">
         <link rel="stylesheet" href="dist/reveal.css">
         <link rel="stylesheet" href="dist/theme/white.css" id="theme">
-
+        <link rel="stylesheet" href="css/cssmenu.css" id="theme">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
     </head>
     <body>
-    <div class="reveal">
-        <div class="slides">
-            <section>
-                <img data-src="logo_RDSL.png">
-            </section>
+<?php include 'menu.php'; ?>
+
                     
 <?php
 // Arquivo de conexão com o banco de dados (use o código anterior)
@@ -30,6 +28,7 @@ $result = $conn->query($sql);
 // Processa os resultados da consulta (exemplo)
 while ($row = $result->fetch_assoc()) {
    ?>
+
    <div class="reveal">
             <div class="slides">
                 <section>
@@ -38,16 +37,13 @@ while ($row = $result->fetch_assoc()) {
 
 <br>
 <?php echo $row["observacoes"]?><br>
-<button onclick="return confirm">
-<a href="edit.php?id=<?php echo $row["id"]?>">Editar</a>
-<br>
-<button onclick="return confirm">
-<a href="cadastrar.php" button type="button" class="btn btn-primary">Cadastrar</a>
-<Br>
-<form action="remover.php" method="post">
-    <input type="hidden" name="id" value="<?php echo $row["id"]?>">
-    <button onclick="return confirm('Deseja realmente remover?');">Remover</button>
-</form>
+
+
+    
+
+
+
+
 
 </section>
    <?php
