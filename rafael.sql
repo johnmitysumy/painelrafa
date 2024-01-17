@@ -40,10 +40,10 @@ CREATE TABLE `notificacoes` (
 --
 
 INSERT INTO `notificacoes` (`id`, `nome`, `status`, `imagem`, `observacoes`) VALUES
-(1, 'Aguas', 'ATIVO ', 'ativo.png', 'Hoje não terá expediente'),
-(2, 'SIA ADM', 'SIA ESTÁ ATIVO', 'inativo.png', NULL),
-(4, 'asdas', 'Ativo  ', '', NULL),
-(5, 'AGUAS ALUNO', 'ATIVO', '', NULL);
+(1, 'Alarmes SIA Aluno', 'ATIVO ', 'ativo.png', 'Hoje não terá expediente'),
+(2, 'Alarmes SIA ADM', 'SIA ESTÁ ATIVO', 'inativo.png', NULL),
+(4, 'Recupera', 'Ativo  ', '', NULL),
+(5, 'Ultimos Alertas', 'ATIVO', '', NULL);
 
 --
 -- Índices para tabelas despejadas

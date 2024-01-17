@@ -31,9 +31,7 @@ while ($row = $result->fetch_assoc()) {
 <div class="container py-6">
     
 <form action="/alterar.php" method="post">
-    <label for="">Status</label><br>
-    <input type="hidden" name="id"  value="<?php echo $row["id"] ?> ">
-    <input type="text" name="status" value="<?php echo $row["status"] ?> " class="form-control"><br><br>
+    
 
     <label for="">Observacoes</label><br>
     <input type="text" name="observacoes" value="<?php echo $row["observacoes"] ?> " class="form-control"><br><br>
@@ -49,4 +47,6 @@ while ($row = $result->fetch_assoc()) {
 
 }
 ?>
+
+
 
