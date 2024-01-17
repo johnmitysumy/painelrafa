@@ -5,6 +5,12 @@ include 'menu.php';
 // Arquivo de conexão com o banco de dados (use o código anterior)
 include 'banco.php';
 
+$id = $_GET['id'];
+
+// Exemplo de consulta simples
+$sql = "SELECT * FROM notificacoes where id = $id";
+$result = $conn->query($sql);
+
 ?>
 
 <!doctype html>
@@ -28,18 +34,8 @@ include 'banco.php';
 
 
 <?php
-
-
-echo $id = $_GET['id'];
-
-
-// Exemplo de consulta simples
-$sql = "SELECT * FROM notificacoes where id = $id";
-$result = $conn->query($sql);
-
 // Processa os resultados da consulta (exemplo)
 while ($row = $result->fetch_assoc()) { 
-    
 ?>
 
 <div class="container py-6">
