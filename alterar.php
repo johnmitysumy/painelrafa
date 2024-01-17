@@ -1,52 +1,31 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-
-  </head>
-  <body>
-
-
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <?php
 // Arquivo de conexão com o banco de dados (use o código anterior)
 include 'banco.php';
 
-
-    // Obtém o valor do novo status do formulário
-    $idatualizar = $_POST['id'];
-    $novoStatus = $_POST['status'];
-    $observacao = $_POST['observacoes'];
+// Obtém o valor do novo status do formulário
+$idatualizar = $_POST['id'];
+$novoStatus = $_POST['status'];
+$observacao = $_POST['observacoes'];
 
 
     // Atualiza o status no banco de dados
     $updateSQL = "UPDATE notificacoes SET status = '$novoStatus', observacoes = '$observacao' WHERE id = $idatualizar";
 
     if ($conn->query($updateSQL) === true) {
-        echo "Status atualizado com sucesso.";
+        echo "<div class='container text-center h2 py-4'>Status atualizado com sucesso.<Br><Br><a href='edit.php?id=".$_POST['id']."' class='btn btn-primary form form-control'>Voltar</a></div>";
     } else {
         echo "Erro na atualização: " . $conn->error;
     }
 
 ?>
-<section class="page-header">
-    <img src="imagem/solor2.jpg" />
-    <br>
-    <div class="container py-6">
+<center>
+<div class="container text-center" >
+  <div class="col-2">
     
-
-<br><br>
-<form action="/alterar.php" method="post">
-
-</form>
-<a href="index.php" class="btn btn-primary form form-control">Voltar</a>
+  </div>
 </div>
-    
+  </center>
 </section>
 
 <?php

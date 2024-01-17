@@ -1,3 +1,12 @@
+<?php 
+//inclue o menu na página
+include 'menu.php'; 
+
+// Arquivo de conexão com o banco de dados (use o código anterior)
+include 'banco.php';
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,11 +25,10 @@
     </head>
   <body>
 
-  <?php include 'menu.php'; ?>
+
 
 <?php
-// Arquivo de conexão com o banco de dados (use o código anterior)
-include 'banco.php';
+
 
 echo $id = $_GET['id'];
 
@@ -30,24 +38,39 @@ $sql = "SELECT * FROM notificacoes where id = $id";
 $result = $conn->query($sql);
 
 // Processa os resultados da consulta (exemplo)
-while ($row = $result->fetch_assoc()) {
-    echo  $row["nome"] . " - Status - ". $row["status"]."<br>";
- 
+while ($row = $result->fetch_assoc()) { 
     
 ?>
 
 <div class="container py-6">
-    
-<form action="/alterar.php" method="post">
-    
+    <div class="container">
+        <h2>EDITAR ALERTA</h2><BR>
 
-    <label for="">Observacoes</label><br>
-    <input type="text" name="observacoes" value="<?php echo $row["observacoes"] ?> " class="form-control"><br><br>
+        <h3><?php echo $row["nome"] ?></h3>
+    </div><Br>
+<form action="/alterar.php" method="post">
+    <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
+    <label>Nome:</label><br>
+    <input type="text" name="nome" class="form form-control" value="<?php echo $row["nome"] ?>"><Br>
+
+    <label>Status:</label>
+    <select name="status" id="status" class="form form-control" required>
+        <option value="<?php echo $row["status"] ?>" selected><?php echo $row["status"] ?></option>
+        <option value="" disabled>Selecione um Status</option>
+        <option value="ATIVO">ATIVO</option>
+        <option value="INATIVO">INATIVO</option>
+    </select>
+    <Br>
+
+    <label for="">Observações:</label><br>
+    <input type="text" name="observacoes" value="<?php echo $row["observacoes"] ?>" class="form-control"><br><br>
+
+    
 
     <input type="submit" value="Atualizar" class="btn btn-danger form form-control">
 
-</form>
-<a href="index.php" class="btn btn-primary form form-control">Voltar</a>
+</form><Br>
+<a href="edit_list.php" class="btn btn-primary form form-control">Voltar</a>
 </div>
 
 
