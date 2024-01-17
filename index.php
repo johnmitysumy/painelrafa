@@ -14,10 +14,10 @@
         <!-- Theme used for syntax highlighted code -->
         <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
     </head>
-    <body>
+   
 <?php include 'menu.php'; ?>
 
-                    
+<div class="reveal" style="margin-top: -100px;">                 
 <?php
 // Arquivo de conexão com o banco de dados (use o código anterior)
 include 'banco.php';
@@ -29,9 +29,16 @@ $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
    ?>
 
-   <div class="reveal">
-            <div class="slides">
-                <section>
+   
+            <div class="slides" >
+                <section <?php 
+        if($row["status"] == "ATIVO"){
+            echo "style='background-color: #ff00006e; border-radius: 10px 10px 10px 10px;'";
+        }else{
+            echo "style='background-color: #2bff008c; border-radius: 10px 10px 10px 10px;'";
+        }
+        ?>>
+
 <h2><?php echo $row["nome"];?></h2> 
 
 
