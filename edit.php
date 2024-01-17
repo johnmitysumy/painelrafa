@@ -39,17 +39,17 @@ while ($row = $result->fetch_assoc()) {
 ?>
 
 <div class="container py-6">
-    <div class="container">
+    <div class="container py-4">
         <h2>EDITAR ALERTA</h2><BR>
 
-        <h3><?php echo $row["nome"] ?></h3>
+        <h3><b>Nome alerta: </b><?php echo $row["nome"] ?></h3>
     </div><Br>
 <form action="/alterar.php" method="post">
     <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
-    <label>Nome:</label><br>
+    <label style="font-weight: bold;">Nome:</label><br>
     <input type="text" name="nome" class="form form-control" value="<?php echo $row["nome"] ?>"><Br>
 
-    <label>Status:</label>
+    <label style="font-weight: bold;">Status:</label>
     <select name="status" id="status" class="form form-control" required>
         <option value="<?php echo $row["status"] ?>" selected><?php echo $row["status"] ?></option>
         <option value="" disabled>Selecione um Status</option>
@@ -58,7 +58,7 @@ while ($row = $result->fetch_assoc()) {
     </select>
     <Br>
 
-    <label for="">Observações:</label><br>
+    <label style="font-weight: bold;">Observações:</label><br>
     <input type="text" name="observacoes" value="<?php echo $row["observacoes"] ?>" class="form-control"><br><br>
 
     
