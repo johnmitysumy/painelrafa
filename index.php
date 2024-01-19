@@ -1,4 +1,18 @@
 <!doctype html>
+<style>
+    .body{
+        background-color: #333333;
+        color:white;
+    }
+    .slide-background-content{
+        background-color: #333333;
+        color:white;
+    }
+    .slides{
+        color:white;
+    }
+
+</style>
 <html>
     <head>
         <meta charset="utf-8">
@@ -17,7 +31,7 @@
    
 <?php include 'menu.php'; ?>
 <br><br>
-<div class="reveal" style="margin-top: -150px;">                 
+<div class="reveal" style="margin-top: -150px; background-color: #333333;">                 
 <?php
 // Arquivo de conexão com o banco de dados (use o código anterior)
 include 'banco.php';
@@ -30,7 +44,7 @@ while ($row = $result->fetch_assoc()) {
    ?>
 
    
-            <div class="slides" >
+            <div class="slides">
                 <section <?php 
         if($row["status"] == "ATIVO"){
             echo "style='background-color: #ff00006e; border-radius: 10px 10px 10px 10px;'";
@@ -39,7 +53,7 @@ while ($row = $result->fetch_assoc()) {
         }
         ?>>
 
-<h2><?php echo $row["nome"];?></h2> 
+<h2 style="color:white;"><?php echo $row["nome"];?></h2> 
 
 
 <br>
